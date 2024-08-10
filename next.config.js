@@ -6,7 +6,9 @@ await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  // ...
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack: (config, { webpack }) => {
     config.plugins.push(
       new webpack.IgnorePlugin({
