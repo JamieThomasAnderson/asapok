@@ -5,10 +5,17 @@
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config = {
-    eslint: {
-        ignoreDuringBuilds: true,
-      }
+const nextConfig = {
+  // ...
+  webpack: (config, { webpack }) => {
+    config.plugins.push(
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^pg-native$|^cloudflare:sockets$/,
+      }),
+    );
+
+    return config;
+  },
 };
 
-export default config;
+export default nextConfig;
