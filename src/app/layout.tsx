@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "ASAP, ok?",
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body>
         <main>{children}</main>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
