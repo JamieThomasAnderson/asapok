@@ -1,6 +1,6 @@
 import { useRouter } from "next/navigation";
 
-export const Header = () => {
+export function Header() {
   const router = useRouter();
 
   return (
@@ -25,4 +25,4 @@ export const Header = () => {
       </div>
     </div>
   );
-};
+}

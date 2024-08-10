@@ -71,12 +71,15 @@ export function Editor({
       const result = await response.json();
       if (result) {
         router.push(`/go/${result.data[0].uuid}`);
-        setIsLoading(false);
       }
     } catch (error) {
       console.error("Network error:", error);
       setIsLoading(false);
     }
+  }
+
+  function onEditorChange(value?: string) {
+    setValue(value || "");
   }
 
   return (
@@ -86,7 +89,7 @@ export function Editor({
         <div>
           <MDEditor
             value={value}
-            onChange={setValue}
+            onChange={onEditorChange}
             height={750}
             preview={mode}
             previewOptions={{

@@ -5,7 +5,7 @@ import { Editor } from "~/components/editor";
 import { Header } from "~/components/header";
 
 export default function HomePage() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("# write anything...");
 
   return (
     <div className="h-screen w-screen bg-gradient-to-t from-[#000111] to-black">
